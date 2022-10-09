@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>tmux | auggie&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="为什么使用 tmuxtmux 是一个 terminal multiplexer（终端复用器），可以启动一系列的终端会话。方便使用。 tmux 同时解绑了会话和终端窗口的概念。关闭终端窗口，会话并不会终止，而是在运行。 因为在 shell 中编写文件的时候，需要开多个终端，还要用鼠标切屏有点麻烦。 安装 : sudo apt-get install tmux tmux 的使用 session1234">
+<meta property="og:type" content="article">
+<meta property="og:title" content="tmux">
+<meta property="og:url" content="http://example.com/2022/04/30/tmux/index.html">
+<meta property="og:site_name" content="auggie&#39;s blog">
+<meta property="og:description" content="为什么使用 tmuxtmux 是一个 terminal multiplexer（终端复用器），可以启动一系列的终端会话。方便使用。 tmux 同时解绑了会话和终端窗口的概念。关闭终端窗口，会话并不会终止，而是在运行。 因为在 shell 中编写文件的时候，需要开多个终端，还要用鼠标切屏有点麻烦。 安装 : sudo apt-get install tmux tmux 的使用 session1234">
+<meta property="og:locale">
+<meta property="og:image" content="http://example.com/tmux/image-20220501100622865.png">
+<meta property="article:published_time" content="2022-04-30T14:09:08.000Z">
+<meta property="article:modified_time" content="2022-10-09T15:47:04.000Z">
+<meta property="article:author" content="auggie">
+<meta property="article:tag" content="技术">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/tmux/image-20220501100622865.png">
+  
+    <link rel="alternate" href="/atom.xml" title="auggie&#39;s blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">auggie&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-tmux" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/30/tmux/" class="article-date">
+  <time datetime="2022-04-30T14:09:08.000Z" itemprop="datePublished">2022-04-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      tmux
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="为什么使用-tmux"><a href="#为什么使用-tmux" class="headerlink" title="为什么使用 tmux"></a>为什么使用 tmux</h1><p>tmux 是一个 terminal multiplexer（终端复用器），可以启动一系列的终端会话。方便使用。</p>
+<p>tmux 同时解绑了会话和终端窗口的概念。关闭终端窗口，会话并不会终止，而是在运行。</p>
+<p><del>因为在 shell 中编写文件的时候，需要开多个终端，还要用鼠标切屏有点麻烦。</del></p>
+<p><strong>安装</strong> : <code>sudo apt-get install tmux</code></p>
+<h1 id="tmux-的使用"><a href="#tmux-的使用" class="headerlink" title="tmux 的使用"></a>tmux 的使用</h1><p><img src="/./tmux/image-20220501100622865.png" alt="image-20220501100622865"></p>
+<h2 id="session"><a href="#session" class="headerlink" title="session"></a>session</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 启动命名 tmux</span></span><br><span class="line">$ tmux new -s &lt;name&gt;</span><br><span class="line">$ ts &lt;name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 退出 tmux 会话</span></span><br><span class="line">$ tmux detach</span><br><span class="line"></span><br><span class="line"><span class="comment"># 查看所有 tmux 会话</span></span><br><span class="line">$ tmux <span class="built_in">ls</span></span><br><span class="line">$ tl</span><br><span class="line"></span><br><span class="line"><span class="comment"># 进入 tmux 会话</span></span><br><span class="line">$ tmux attach -t &lt;编号&gt; | &lt;会话名&gt;</span><br><span class="line">$ ta</span><br><span class="line"></span><br><span class="line"><span class="comment"># 杀死会话</span></span><br><span class="line">$ tmux kill-session -t &lt;编号&gt; | &lt;会话&gt;</span><br><span class="line">$ tkss</span><br><span class="line"></span><br><span class="line"><span class="comment"># 切换会话</span></span><br><span class="line">$ tmux switch -s &lt;<span class="built_in">id</span>&gt; | &lt;session-name&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># tmux 的其他命令</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有快捷键，及其对应的 Tmux 命令</span></span><br><span class="line">$ tmux list-keys</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出所有 Tmux 命令及其参数</span></span><br><span class="line">$ tmux list-commands</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列出当前所有 Tmux 会话的信息</span></span><br><span class="line">$ tmux info</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新加载当前的 Tmux 配置</span></span><br><span class="line">$ tmux source-file ~/.tmux.conf</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="pane"><a href="#pane" class="headerlink" title="pane"></a>pane</h2><h4 id="划分窗格"><a href="#划分窗格" class="headerlink" title="划分窗格"></a>划分窗格</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 划分上下两个窗格</span></span><br><span class="line">$ tmux split-window</span><br><span class="line"></span><br><span class="line"><span class="comment"># 划分左右两个窗格</span></span><br><span class="line">$ tmux split-window -h</span><br></pre></td></tr></table></figure>
+
+<h4 id="移动光标"><a href="#移动光标" class="headerlink" title="移动光标"></a>移动光标</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ tmux select-pane -UDLR</span><br></pre></td></tr></table></figure>
+
+<h4 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h4><ul>
+<li><p>ctrl+b %：划分左右窗格</p>
+</li>
+<li><p>ctrl+b “：划分上下窗格</p>
+</li>
+<li><p>ctrl+b !: 将 pane 拆分成一个 window</p>
+</li>
+<li><p>ctrl+b z: 将 pane 全屏显示</p>
+</li>
+<li><p>ctrl+b 方向键：移动光标</p>
+</li>
+<li><p>ctrl+b x: 关闭窗格</p>
+</li>
+</ul>
+<h2 id="window"><a href="#window" class="headerlink" title="window"></a>window</h2><ul>
+<li>ctrl+b c：create</li>
+<li>ctrl+b ,: rename</li>
+<li>ctrl+b w: select</li>
+</ul>
+<h1 id="oh-my-tmux"><a href="#oh-my-tmux" class="headerlink" title="oh-my-tmux"></a>oh-my-tmux</h1><p><a target="_blank" rel="noopener" href="https://github.com/gpakosz/.tmux">github: oh my tmux</a> </p>
+<p>使用 tmux 当然要美化一下捏，zsh 中的 tmux plugin 也挺好用的捏</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span></span><br><span class="line">$ git <span class="built_in">clone</span> https://github.com/gpakosz/.tmux.git</span><br><span class="line">$ <span class="built_in">ln</span> -s -f .tmux/.tmux.conf</span><br><span class="line">$ <span class="built_in">cp</span> .tmux/.tmux.conf.local .</span><br><span class="line"></span><br><span class="line">$ tmux <span class="built_in">source</span> ~/.tmux.conf</span><br></pre></td></tr></table></figure>
+
+<p>问题：色彩显示不完全</p>
+<p>需要在 <code>.tmux.conf</code> 中配置一下 color</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">if-shell <span class="string">&#x27;[ $(uname -s) = Linux ]&#x27;</span> \</span><br><span class="line">     <span class="string">&#x27;set -g default-terminal &quot;xterm-256color&quot;&#x27;</span></span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2022/04/30/tmux/" data-id="cl91jknlz000l94ikf9gg9fnx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2022/05/14/html-css-vue/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          前端基础学习笔记
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/04/25/database1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">数据库原理一</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmake/" rel="tag">cmake</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javaweb/" rel="tag">javaweb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/os/" rel="tag">os</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/cmake/" style="font-size: 10px;">cmake</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/javaweb/" style="font-size: 10px;">javaweb</a> <a href="/tags/os/" style="font-size: 10px;">os</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 20px;">技术</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 15px;">日常</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/10/09/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/14/java/">java</a>
+          </li>
+        
+          <li>
+            <a href="/2022/05/14/html-css-vue/">前端基础学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/30/tmux/">tmux</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/25/database1/">数据库原理一</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 auggie<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
