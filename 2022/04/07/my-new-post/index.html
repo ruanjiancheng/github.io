@@ -1,96 +1,221 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh">
 <head>
-  <meta charset="utf-8">
-  
-
-  
-  <title>docker | auggie&#39;s blog</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="docker 安装以及 opengauss 安装docker 安装 docker 依赖环境安装 1234sudo yum install -y yum-utilssudo yum-config-manager \   --add-repo \   https:&#x2F;&#x2F;download.docker.com&#x2F;linux&#x2F;centos&#x2F;docker-ce.repo  docker 引擎安装 12sudo">
-<meta property="og:type" content="article">
-<meta property="og:title" content="docker">
-<meta property="og:url" content="http://example.com/2022/04/07/my-new-post/index.html">
-<meta property="og:site_name" content="auggie&#39;s blog">
-<meta property="og:description" content="docker 安装以及 opengauss 安装docker 安装 docker 依赖环境安装 1234sudo yum install -y yum-utilssudo yum-config-manager \   --add-repo \   https:&#x2F;&#x2F;download.docker.com&#x2F;linux&#x2F;centos&#x2F;docker-ce.repo  docker 引擎安装 12sudo">
-<meta property="og:locale">
-<meta property="article:published_time" content="2022-04-07T00:18:50.000Z">
-<meta property="article:modified_time" content="2022-10-09T15:47:04.000Z">
-<meta property="article:author" content="auggie">
-<meta property="article:tag" content="技术">
-<meta property="article:tag" content="docker">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="auggie&#39;s blog" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="write something interesting">
+    <meta name="author" content="auggie">
+    
+    <title>
+        
+            docker |
+        
+        Auggie&#39;s blog
+    </title>
+    
 <link rel="stylesheet" href="/css/style.css">
 
+    <link rel="shortcut icon" href="/images/logo.png">
+    
+<link rel="stylesheet" href="/fontawesome/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/css/brands.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","logo":"/images/logo.svg","favicon":"/images/logo.png","avatar":"/images/avatar.png","font_size":null,"font_family":null,"left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/bg.svg","description":"Keep running and Keep loving.","font_color":null,"hitokoto":{"enable":false}},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block_tools":{"enable":true,"style":"default"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.9"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"};
+  </script>
 <meta name="generator" content="Hexo 5.4.2"></head>
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">auggie&#39;s blog</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-my-new-post" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2022/04/07/my-new-post/" class="article-date">
-  <time datetime="2022-04-07T00:18:50.000Z" itemprop="datePublished">2022-04-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      docker
-    </h1>
-  
 
-      </header>
+<body>
+<div class="progress-bar-container">
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="docker-安装以及-opengauss-安装"><a href="#docker-安装以及-opengauss-安装" class="headerlink" title="docker 安装以及 opengauss 安装"></a>docker 安装以及 opengauss 安装</h1><h2 id="docker-安装"><a href="#docker-安装" class="headerlink" title="docker 安装"></a>docker 安装</h2><ol>
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="logo-title" href="/">
+               Auggie&#39;s blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                首页
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                归档
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                关于
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">首页</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">归档</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">关于</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">docker</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">auggie</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2022-04-07 08:18:50</span>
+        <span class="mobile">2022-04-07 08:18</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2022-10-09 23:47:04</span>
+    </span>
+    
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/docker/">docker</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.8k 字</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>8 分钟</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h1 id="docker-安装以及-opengauss-安装"><a href="#docker-安装以及-opengauss-安装" class="headerlink" title="docker 安装以及 opengauss 安装"></a>docker 安装以及 opengauss 安装</h1><h2 id="docker-安装"><a href="#docker-安装" class="headerlink" title="docker 安装"></a>docker 安装</h2><ol>
 <li><p>docker 依赖环境安装</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install -y yum-utils</span><br><span class="line">sudo yum-config-manager \</span><br><span class="line">   --add-repo \</span><br><span class="line">   https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
 </li>
@@ -342,141 +467,232 @@
 </li>
 </ol>
 <h2 id="Docker-网络"><a href="#Docker-网络" class="headerlink" title="Docker 网络"></a>Docker 网络</h2>
-      
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul class="copyright-info-content">
+        <li>本文标题：docker</li>
+        <li>本文作者：auggie</li>
+        <li>创建时间：2022-04-07 08:18:50</li>
+        <li>
+            本文链接：https://ruanjiancheng.github.io/2022/04/07/my-new-post/
+        </li>
+        <li>
+            版权声明：本博客所有文章除特别声明外，均采用 <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> 许可协议。转载请注明出处！
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E6%8A%80%E6%9C%AF/">#技术</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/docker/">#docker</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/04/07/compute-network/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">计算机网络</span>
+                                <span class="post-nav-item">上一篇</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+            </div>
+        
+
+        
     </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2022/04/07/my-new-post/" data-id="cl91jknlt000c94ik0s983srm" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+</div>
 
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2022/04/07/compute-network/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2021</span> -
+            
+            2022
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">auggie</a>
+            
+        </div>
         
-          计算机网络
+            <script async 
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    访问人数&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+            </div>
         
-      </div>
-    </a>
-  
-  
-</nav>
-
-  
-</article>
-
-</section>
+        <div class="theme-info info-item">
+            由 <a target="_blank" href="https://hexo.io">Hexo</a> 驱动&nbsp;|&nbsp;主题
+            &nbsp;
+            <a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.9</a>
+        </div>
         
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmake/" rel="tag">cmake</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/" rel="tag">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javaweb/" rel="tag">javaweb</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/os/" rel="tag">os</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vim/" rel="tag">vim</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%97%A5%E5%B8%B8/" rel="tag">日常</a></li></ul>
+        
     </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/cmake/" style="font-size: 10px;">cmake</a> <a href="/tags/css/" style="font-size: 10px;">css</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/javaweb/" style="font-size: 10px;">javaweb</a> <a href="/tags/os/" style="font-size: 10px;">os</a> <a href="/tags/vim/" style="font-size: 10px;">vim</a> <a href="/tags/vue/" style="font-size: 10px;">vue</a> <a href="/tags/%E6%8A%80%E6%9C%AF/" style="font-size: 20px;">技术</a> <a href="/tags/%E6%97%A5%E5%B8%B8/" style="font-size: 15px;">日常</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">October 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/05/">May 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2022/10/09/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/14/java/">java</a>
-          </li>
-        
-          <li>
-            <a href="/2022/05/14/html-css-vue/">前端基础学习笔记</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/30/tmux/">tmux</a>
-          </li>
-        
-          <li>
-            <a href="/2022/04/25/database1/">数据库原理一</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2022 auggie<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
 </footer>
+
+        </div>
     </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-up-right-and-down-left-from-center"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#docker-%E5%AE%89%E8%A3%85%E4%BB%A5%E5%8F%8A-opengauss-%E5%AE%89%E8%A3%85"><span class="nav-text">docker 安装以及 opengauss 安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-%E5%AE%89%E8%A3%85"><span class="nav-text">docker 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#opengauss-%E5%AE%89%E8%A3%85"><span class="nav-text">opengauss 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">Docker 常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%AE%E5%8A%A9%E4%BF%A1%E6%81%AF"><span class="nav-text">帮助信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%95%9C%E5%83%8F%E5%91%BD%E4%BB%A4"><span class="nav-text">镜像命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%B9%E5%99%A8%E5%91%BD%E4%BB%A4"><span class="nav-text">容器命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%B0%E5%BB%BA%E5%AE%B9%E5%99%A8%E5%B9%B6%E5%90%AF%E5%8A%A8"><span class="nav-text">新建容器并启动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%97%E5%87%BA%E8%BF%90%E8%A1%8C%E7%9A%84%E5%AE%B9%E5%99%A8"><span class="nav-text">列出运行的容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%80%E5%87%BA%E5%AE%B9%E5%99%A8"><span class="nav-text">退出容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E5%AE%B9%E5%99%A8"><span class="nav-text">删除容器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E5%92%8C%E5%81%9C%E6%AD%A2%E5%AE%B9%E5%99%A8"><span class="nav-text">启动和停止容器</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96%E5%91%BD%E4%BB%A4"><span class="nav-text">其他命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="nav-text">可视化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-%E9%95%9C%E5%83%8F"><span class="nav-text">Docker 镜像</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%95%9C%E5%83%8F%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-text">镜像是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%95%9C%E5%83%8F%E5%8A%A0%E8%BD%BD%E5%8E%9F%E7%90%86"><span class="nav-text">镜像加载原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#commit-%E9%95%9C%E5%83%8F"><span class="nav-text">commit 镜像</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%B9%E5%99%A8%E6%95%B0%E6%8D%AE%E5%8D%B7%EF%BC%88%E6%95%B0%E6%8D%AE%E6%8C%81%E4%B9%85%E5%8C%96%EF%BC%8C%E5%8F%8C%E5%90%91%E7%BB%91%E5%AE%9A%EF%BC%89"><span class="nav-text">容器数据卷（数据持久化，双向绑定）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E6%95%B0%E6%8D%AE%E5%8D%B7"><span class="nav-text">使用数据卷</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%82%E8%BD%BD-mysql"><span class="nav-text">挂载 mysql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B7%E5%90%8D%E5%92%8C%E5%8C%BF%E5%90%8D%E6%8C%82%E8%BD%BD"><span class="nav-text">具名和匿名挂载</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dockerfile"><span class="nav-text">Dockerfile</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#dockerfile-%E7%9A%84%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="nav-text">dockerfile 的构建过程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%EF%BC%9A"><span class="nav-text">基础知识：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#dockerfile-%E7%9A%84%E6%8C%87%E4%BB%A4"><span class="nav-text">dockerfile 的指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E5%B8%83%E9%95%9C%E5%83%8F"><span class="nav-text">发布镜像</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%91%E5%B8%83-springboot-%E9%A1%B9%E7%9B%AE"><span class="nav-text">发布 springboot 项目</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-%E7%BD%91%E7%BB%9C"><span class="nav-text">Docker 网络</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
 
 
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    
 
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
+</main>
 
 
 
 
-<script src="/js/script.js"></script>
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
 
 
 
 
-  </div>
+
+
+
+    
+<script src="/js/code-block-tools.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
 </body>
 </html>
