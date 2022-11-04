@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="write something interesting">
+    <meta name="author" content="auggie">
+    
+    <title>
+        
+            python |
+        
+        Auggie&#39;s blog
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.png">
+    
+<link rel="stylesheet" href="/fontawesome/css/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/css/regular.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/css/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/css/brands.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"zh","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","logo":"/images/logo.svg","favicon":"/images/logo.png","avatar":"/images/avatar.png","font_size":null,"font_family":null,"left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":true,"header_transparent":true,"background_img":"/images/bg.svg","description":"Keep running and Keep loving.","font_color":null,"hitokoto":{"enable":false}},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":false,"preload":false},"code_copy":{},"code_block_tools":{"enable":true,"style":"default"},"side_tools":{},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.9"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"};
+  </script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            
+<header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/logo.svg">
+                </a>
+            
+            <a class="logo-title" href="/">
+               Auggie&#39;s blog
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">python</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.png">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">auggie</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        
+<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        
+            <i class="fa-regular fa-calendar-plus"></i>&nbsp;
+        
+        <span class="pc">2022-10-28 11:56:04</span>
+        <span class="mobile">2022-10-28 11:56</span>
+    </span>
+    
+        <span class="article-update-date article-meta-item">
+        <i class="fas fa-file-pen"></i>&nbsp;
+        <span class="pc">2022-11-04 10:55:21</span>
+    </span>
+    
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E6%8A%80%E6%9C%AF/">技术</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.2k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>5 Mins</span>
+        </span>
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>入职字节已经小半年了，对业务已经轻车熟路。导致可以有很多时间在工位上学习，由于岗位是 python，所以打算来一个 python 进阶。</p>
+<p>最近学习了一些 golang 的特性，所以先学学 python 对 golang 特性的一些实现。</p>
+<h2 id="协程-amp-装饰器"><a href="#协程-amp-装饰器" class="headerlink" title="协程 &amp; 装饰器"></a>协程 &amp; 装饰器</h2><p>goroutine 的实现是非常方便和优雅的。虽然 python coroutine 实现繁琐了一点，但是还是有的。</p>
+<p>协程对于IO密集型的程序的提速还是非常明显的。</p>
+<p>使用 <code>async</code> 关键字可以定义协程函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">await</span> asyncio.sleep(<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> x + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+
+<p>协程函数不能像普通函数一样直接 func() 调用，这样只会得到一个协程对象 </p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;coroutine object main at 0x1032987b0&gt;</span><br></pre></td></tr></table></figure>
+
+<p>协程函数需要运行的时候，需要注册到<strong>事件循环</strong>中。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loop = asyncio.get_event_loop() <span class="comment"># 获取事件循环</span></span><br></pre></td></tr></table></figure>
+
+<p>可以使用 <code>await</code> 关键字调用其他的协程函数。</p>
+<ul>
+<li>await + 可等待对象（协程对象，Future，Task对象（IO等待））</li>
+<li><code>等待到对象的返回结果</code>，才会继续执行后续代码</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">await</span> asyncio.sleep(<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> x + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">result = <span class="keyword">await</span> asyncio.gather(*[add(i) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>)])</span><br></pre></td></tr></table></figure>
+
+<p>全部代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> asyncio</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> functools</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">timer</span>(<span class="params">f</span>):</span><br><span class="line"><span class="meta">    @functools.wraps(<span class="params">f</span>)</span></span><br><span class="line">    <span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">inner</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">        start = time.time()</span><br><span class="line">        <span class="keyword">await</span> f(*args, **kwargs)</span><br><span class="line">        <span class="built_in">print</span>(time.time() - start)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> inner</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">add</span>(<span class="params">x</span>):</span><br><span class="line">    <span class="keyword">await</span> asyncio.sleep(<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">return</span> x + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@timer</span></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    r = <span class="keyword">await</span> asyncio.gather(*[add(i) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>)])</span><br><span class="line">    <span class="built_in">print</span>(r)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    asyncio.get_event_loop().run_until_complete(main())</span><br></pre></td></tr></table></figure>
+
+<p>一个控制 coroutine 并发量的装饰器👇</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">concurrency_limit</span>(<span class="params">limit</span>):</span><br><span class="line">    sem = asyncio.Semaphore(limit)</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">executor</span>(<span class="params">func</span>):</span><br><span class="line"><span class="meta">        @functools.wraps(<span class="params">func</span>)</span></span><br><span class="line">        <span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">            <span class="keyword">async</span> <span class="keyword">with</span> sem:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">await</span> func(*args, **kwargs)</span><br><span class="line">        <span class="keyword">return</span> wrapper</span><br><span class="line">    <span class="keyword">return</span> executor</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="pytest"><a href="#pytest" class="headerlink" title="pytest"></a>pytest</h2><p>python 的一个第三方自动化测试框架，功能十分强大，类似于 <code>go test</code></p>
+<p>pytest 框架的约束：</p>
+<ul>
+<li>所有的单测文件名都需要满足<strong>test_*.py</strong>格式或***_test.py**格式。</li>
+<li>在单测文件中，测试类以<strong>Test</strong>开头，并且不能带有 init 方法(注意：定义class时，需要以T开头，不然pytest是不会去运行该class的)</li>
+<li>在单测类中，可以包含一个或多个test_开头的函数。</li>
+<li>在执行pytest命令时，会自动从当<strong>前目录及子目录中寻找</strong>符合上述约束的测试函数来执行。</li>
+</ul>
+<blockquote>
+<p>-s 显示测试函数中的 print</p>
+<p>-vv 查看详细 test</p>
+<p>-q 查看简略 test</p>
+<p>-pdb 失败时跳转到 pdb</p>
+<p>–html 生成错误报告</p>
+</blockquote>
+<p>指定测试函数：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pytest test_mod.py::test_func</span><br><span class="line">pytest test_mod.py::TestClass::test_method</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="setup-和-teardown"><a href="#setup-和-teardown" class="headerlink" title="setup 和 teardown"></a>setup 和 teardown</h3><p><a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/m0_59868866/article/details/125064367">pytest setup &amp; teardown<i class="fas fa-external-link-alt"></i></a></p>
+<ul>
+<li>setup_method，teardown_method 在测试类的每一个<strong>测试方法</strong>前后都执行一遍</li>
+<li>setup_class，teardown_class 在<strong>测试类</strong>的前后都执行一遍</li>
+<li>setup_function，teardown_function 在<strong>测试函数</strong>的前后执行一遍，不会影响测试类</li>
+<li>setup_module，teardown_module 模块级测试</li>
+</ul>
+<h3 id="pytest-ini"><a href="#pytest-ini" class="headerlink" title="pytest.ini"></a>pytest.ini</h3><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[pytest]</span></span><br><span class="line"><span class="comment"># test路径</span></span><br><span class="line"><span class="attr">testpaths</span> = .</span><br><span class="line"><span class="comment"># 命令行参数</span></span><br><span class="line"><span class="attr">addopts</span> = -s --html=./report.html -vv</span><br><span class="line"><span class="comment"># 搜索文件名</span></span><br><span class="line"><span class="attr">python_files</span> = test_*.py</span><br><span class="line"><span class="comment"># 搜索的类名</span></span><br><span class="line"><span class="attr">python_classes</span> = Test_*</span><br><span class="line"><span class="comment">#搜索的函数名</span></span><br><span class="line"><span class="attr">python_functions</span> = test_*</span><br><span class="line"><span class="comment"># 分组</span></span><br><span class="line"><span class="attr">markers</span> = </span><br><span class="line">    g1: group1</span><br><span class="line">    g2: group2</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">一些好用的 pytest 插件</span></span><br><span class="line">pip install pytest-html</span><br><span class="line">pip install pytest-sugar</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 跳过测试函数</span></span><br><span class="line"><span class="meta">@pytest.mark.skipif(<span class="params">func(<span class="params"></span>) == <span class="number">1</span>,reason = <span class="string">&quot;跳过该函数&quot;</span></span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 标记为预期失败</span></span><br><span class="line"><span class="meta">@pytest.mark.xfail(<span class="params">func(<span class="params"></span>) == <span class="number">1</span>, reason=<span class="string">&quot;标注为预期失败&quot;</span></span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 函数参数赋值</span></span><br><span class="line"><span class="meta">@pytest.mark.parametrize(<span class="params"><span class="string">&quot;a,b&quot;</span>,[(<span class="params"><span class="number">1</span>,<span class="number">2</span></span>),(<span class="params"><span class="number">0</span>,<span class="number">3</span></span>)]</span>) </span><span class="comment"># 参数a,b均被赋予两个值，函数会运行两遍</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">test_a</span>(<span class="params">self,a,b</span>): <span class="comment"># 参数必须和parametrize里面的参数一致</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;test data:a=%d,b=%d&quot;</span>%(a,b))</span><br><span class="line"></span><br><span class="line"><span class="comment">## 或者使用函数返回值的形式</span></span><br><span class="line"><span class="meta">@pytest.mark.parametrize(<span class="params"><span class="string">&quot;a,b&quot;</span>,return_test_data(<span class="params"></span>)</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 分组</span></span><br><span class="line"><span class="meta">@pytest.mark.组名</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 分组测试</span></span><br><span class="line">pytest -m 组名</span><br></pre></td></tr></table></figure>
+
+<p><a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/lovedingd/article/details/98952868?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522166694241916782417085479%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=166694241916782417085479&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-98952868-null-null.142%5Ev62%5Epc_search_tree,201%5Ev3%5Econtrol_2,213%5Ev1%5Econtrol&utm_term=pytest&spm=1018.2226.3001.4187">pytest blog 1<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_44867493/article/details/123062129?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522166694241916782417085479%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=166694241916782417085479&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~baidu_landing_v2~default-5-123062129-null-null.142%5Ev62%5Epc_search_tree,201%5Ev3%5Econtrol_2,213%5Ev1%5Econtrol&utm_term=pytest&spm=1018.2226.3001.4187">pytest blog 2<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="locust"><a href="#locust" class="headerlink" title="locust"></a>locust</h2><p>轻量级 python 压测框架</p>
+<p><code>on_site()</code> 方法，用于对每一个 user 进行初始化。</p>
+<p><code>wait_time</code> 成员，让一个用户在执行完上一个 task 之后等待一段时间</p>
+<ul>
+<li><code>between(start, end)</code> 等待一个随机值</li>
+<li><code>constant(second)</code> 等待一个固定值</li>
+</ul>
+<p><code>task</code> 装饰器</p>
+<p><code>tag</code> 装饰器，用于标识每一个 task 的 tag，可以指定 <code>--tags [tag]</code> 用于载入测试，或者 <code>--exclude-tags tag3 tag4</code> 排斥 tag3 tag4.</p>
+<h3 id="验证-response-的正确性"><a href="#验证-response-的正确性" class="headerlink" title="验证 response 的正确性"></a>验证 response 的正确性</h3><p>使用 <code>catch_response</code> 参数和 <code>success() &amp; failure(msg=&quot;&quot;)</code> 方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> self.client.get(<span class="string">&quot;/&quot;</span>, catch_response=<span class="literal">True</span>) <span class="keyword">as</span> response:</span><br><span class="line">    <span class="keyword">if</span> response.text != <span class="string">&quot;Success&quot;</span>:</span><br><span class="line">        response.failure(<span class="string">&quot;Got wrong response&quot;</span>)</span><br><span class="line">    <span class="keyword">elif</span> response.elapsed.total_seconds() &gt; <span class="number">0.5</span>:</span><br><span class="line">        response.failure(<span class="string">&quot;Request took too long&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> locust <span class="keyword">import</span> HttpUser, between, task, TaskSet, events</span><br><span class="line"></span><br><span class="line"><span class="meta">@events.test_start.add_listener</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">on_test_start</span>(<span class="params">**kwargs</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;test start&#x27;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">@events.test_stop.add_listener</span></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">on_test_stop</span>(<span class="params">**kwargs</span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&#x27;test end&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Test</span>(<span class="title class_ inherited__">TaskSet</span>):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">on_start</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;user start&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">on_stop</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;user stop&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="meta">    @task</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">test</span>(<span class="params">self</span>):</span><br><span class="line">        url = <span class="string">&#x27;/api/v1/tts?reqid=$4f1d09bc-5b6a-11ed-9b4c-0a8d64818ea5&#x27;</span></span><br><span class="line">        data = <span class="string">&#x27;&#123;&quot;app&quot;: &#123;&quot;appid&quot;: &quot;sa_tts&quot;, &quot;token&quot;: &quot;access_token&quot;&#125;&#x27;</span></span><br><span class="line">        <span class="keyword">with</span> self.client.post(url=url, data=data, catch_response=<span class="literal">True</span>) <span class="keyword">as</span> response:</span><br><span class="line">            <span class="keyword">if</span> response.text <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                response.success()</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                response.failure(<span class="string">&quot;text is none&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">WebsiteUser</span>(<span class="title class_ inherited__">HttpUser</span>):</span><br><span class="line">    wait_time = between(<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">    tasks = [Test]</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locust -f locustfile.py --host=http://speech.byted.org</span><br></pre></td></tr></table></figure>
+
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul class="copyright-info-content">
+        <li>Post title：python</li>
+        <li>Post author：auggie</li>
+        <li>Create time：2022-10-28 11:56:04</li>
+        <li>
+            Post link：https://ruanjiancheng.github.io/2022/10/28/python/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/%E6%8A%80%E6%9C%AF/">#技术</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/10/17/6-824/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">6.824</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            
+<footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+                <span>2021</span> -
+            
+            2022
+            
+                &nbsp;<i class="fas fa-heart icon-animate"></i>
+                &nbsp;<a href="/">auggie</a>
+            
+        </div>
+        
+            <script async 
+                    src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme
+            &nbsp;
+            <a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.9</a>
+        </div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-up-right-and-down-left-from-center"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8F%E7%A8%8B-amp-%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="nav-text">协程 &amp; 装饰器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytest"><span class="nav-text">pytest</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#setup-%E5%92%8C-teardown"><span class="nav-text">setup 和 teardown</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pytest-ini"><span class="nav-text">pytest.ini</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#locust"><span class="nav-text">locust</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81-response-%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%80%A7"><span class="nav-text">验证 response 的正确性</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+    
+<script src="/js/code-block-tools.js"></script>
+
+
+
+
+
+<div class="post-scripts">
+    
+        
+<script src="/js/left-side-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/toc.js"></script>
+
+    
+</div>
+
+
+
+</body>
+</html>
