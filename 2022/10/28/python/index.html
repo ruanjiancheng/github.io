@@ -174,7 +174,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2022-11-04 10:55:21</span>
+        <span class="pc">2022-11-09 20:20:26</span>
     </span>
     
     
@@ -194,12 +194,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>1.2k Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.5k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>5 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>6 Mins</span>
         </span>
     
     
@@ -237,8 +237,11 @@
 <p>一个控制 coroutine 并发量的装饰器👇</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">concurrency_limit</span>(<span class="params">limit</span>):</span><br><span class="line">    sem = asyncio.Semaphore(limit)</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">executor</span>(<span class="params">func</span>):</span><br><span class="line"><span class="meta">        @functools.wraps(<span class="params">func</span>)</span></span><br><span class="line">        <span class="keyword">async</span> <span class="keyword">def</span> <span class="title function_">wrapper</span>(<span class="params">*args, **kwargs</span>):</span><br><span class="line">            <span class="keyword">async</span> <span class="keyword">with</span> sem:</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">await</span> func(*args, **kwargs)</span><br><span class="line">        <span class="keyword">return</span> wrapper</span><br><span class="line">    <span class="keyword">return</span> executor</span><br></pre></td></tr></table></figure>
 
-
-
+<h2 id="asyncio"><a href="#asyncio" class="headerlink" title="asyncio"></a>asyncio</h2><p><a class="link" target="_blank" rel="noopener" href="https://docs.python.org/zh-cn/3/library/asyncio.html">asyncio<i class="fas fa-external-link-alt"></i></a></p>
+<p>python 异步 IO</p>
+<p>asyncio 是用来编写 <strong>并发</strong> 代码的库，使用 <strong>async&#x2F;await</strong> 语法。</p>
+<p>asyncio 被用作多个提供高性能 Python 异步框架的基础，包括网络和网站服务，数据库连接库，分布式任务队列等等。</p>
+<p>asyncio 往往是构建 IO 密集型和高层级 <strong>结构化</strong> 网络代码的最佳选择。</p>
 <h2 id="pytest"><a href="#pytest" class="headerlink" title="pytest"></a>pytest</h2><p>python 的一个第三方自动化测试框架，功能十分强大，类似于 <code>go test</code></p>
 <p>pytest 框架的约束：</p>
 <ul>
@@ -293,6 +296,39 @@
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locust -f locustfile.py --host=http://speech.byted.org</span><br></pre></td></tr></table></figure>
 
 
+
+<h2 id="networkx"><a href="#networkx" class="headerlink" title="networkx"></a>networkx</h2><p><a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/BetaRun/article/details/51168259?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522166778766316782429767041%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=166778766316782429767041&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-51168259-null-null.142%5Ev63%5Econtrol,201%5Ev3%5Econtrol_2,213%5Ev1%5Econtrol&utm_term=A%20Faster%20Algorithm%20for%20Betweenness%20Centrality&spm=1018.2226.3001.4187">网络介数中心性计算<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link" target="_blank" rel="noopener" href="https://networkx.org/documentation/stable/tutorial.html#using-the-graph-constructors">networkx tutorial<i class="fas fa-external-link-alt"></i></a></p>
+<p><a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/u012856866/article/details/116458059?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522166778950316782427490151%2522%252C%2522scm%2522%253A%252220140713.130102334..%2522%257D&request_id=166778950316782427490151&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~top_positive~default-1-116458059-null-null.142%5Ev63%5Econtrol,201%5Ev3%5Econtrol_2,213%5Ev1%5Econtrol&utm_term=networkx&spm=1018.2226.3001.4187">CSDN networkx<i class="fas fa-external-link-alt"></i></a></p>
+<p>创建图</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">G = nx.Graph()          <span class="comment"># 无向图</span></span><br><span class="line">G = nx.DiGraph()        <span class="comment"># 有向图</span></span><br><span class="line">G = nx.MultiGraph()     <span class="comment"># 多重无向图</span></span><br><span class="line">G = nx.MultiDigraph()   <span class="comment"># 多重有向图</span></span><br><span class="line">G.clear()               <span class="comment"># 清空图</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>加点</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">G.add_node(<span class="number">1</span>)</span><br><span class="line">G.add_nodes_from([<span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># add attribute (node, node_attribute_dict)</span></span><br><span class="line">G.add_nodes_from([</span><br><span class="line">    (<span class="number">4</span>, &#123;<span class="string">&quot;color&quot;</span>: <span class="string">&quot;red&quot;</span>&#125;),</span><br><span class="line">    (<span class="number">5</span>, &#123;<span class="string">&quot;color&quot;</span>: <span class="string">&quot;green&quot;</span>&#125;),</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>加边</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">G.add_edge(<span class="number">1</span>, <span class="number">2</span>)             <span class="comment"># default edge data=1</span></span><br><span class="line">G.add_edge(<span class="number">2</span>, <span class="number">3</span>, weight=<span class="number">0.9</span>) <span class="comment"># specify edge data</span></span><br><span class="line"> </span><br><span class="line">elist = [(<span class="number">1</span>, <span class="number">2</span>), (<span class="number">2</span>, <span class="number">3</span>), (<span class="number">1</span>, <span class="number">4</span>), (<span class="number">4</span>, <span class="number">2</span>)]</span><br><span class="line">G.add_edges_from(elist)</span><br><span class="line">elist = [(<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="number">5.0</span>), (<span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="number">3.0</span>), (<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="number">1.0</span>), (<span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="number">7.3</span>)]</span><br><span class="line">G.add_weighted_edges_from(elist)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>基本信息获取</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">obj.nodes</span><br><span class="line">obj.edges</span><br><span class="line">obj.degree</span><br><span class="line"></span><br><span class="line">obj.degree([<span class="number">2</span>, <span class="number">4</span>]) <span class="comment"># 查看 2，4 节点的度</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>绘图</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">nx.draw(G)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<script>
+  console.log("https://kops.uni-konstanz.de/bitstream/handle/123456789/5739/algorithm.pdf")
+</script>
+
         </div>
 
         
@@ -326,6 +362,21 @@
 
         
             <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/2022/11/07/scala/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">scala</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
                     <div class="article-next">
@@ -461,7 +512,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8F%E7%A8%8B-amp-%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="nav-text">协程 &amp; 装饰器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytest"><span class="nav-text">pytest</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#setup-%E5%92%8C-teardown"><span class="nav-text">setup 和 teardown</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pytest-ini"><span class="nav-text">pytest.ini</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#locust"><span class="nav-text">locust</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81-response-%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%80%A7"><span class="nav-text">验证 response 的正确性</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%83%8C%E6%99%AF"><span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8F%E7%A8%8B-amp-%E8%A3%85%E9%A5%B0%E5%99%A8"><span class="nav-text">协程 &amp; 装饰器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#asyncio"><span class="nav-text">asyncio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytest"><span class="nav-text">pytest</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#setup-%E5%92%8C-teardown"><span class="nav-text">setup 和 teardown</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pytest-ini"><span class="nav-text">pytest.ini</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#locust"><span class="nav-text">locust</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81-response-%E7%9A%84%E6%AD%A3%E7%A1%AE%E6%80%A7"><span class="nav-text">验证 response 的正确性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#networkx"><span class="nav-text">networkx</span></a></li></ol>
     </div>
 </div>
         </aside>
