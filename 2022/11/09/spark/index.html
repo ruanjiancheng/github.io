@@ -174,7 +174,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2022-11-09 20:20:26</span>
+        <span class="pc">2022-11-10 20:29:14</span>
     </span>
     
     
@@ -184,7 +184,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/tech/">-tech</a>&nbsp;
+                        <a href="/tags/tech/">tech</a>&nbsp;
                     </li>
                 
             </ul>
@@ -194,12 +194,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>1.1k Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.6k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>6 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>8 Mins</span>
         </span>
     
     
@@ -287,10 +287,10 @@
 <li><p>下载 <code>spark</code>，<a class="link" target="_blank" rel="noopener" href="https://spark.apache.org/downloads.html">spark官网<i class="fas fa-external-link-alt"></i></a></p>
 </li>
 <li><p>安装 配置 <code>spark</code></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo tar -zxf ~/下载/spark-2.1.0-bin-without-hadoop.tgz -C /usr/local/cd /usr/localsudo <span class="built_in">mv</span> ./spark-2.1.0-bin-without-hadoop/ ./sparksudo <span class="built_in">chown</span> -R hadoop:hadoop ./spark          <span class="comment"># 此处的 hadoop 为你的用户名</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo tar -zxf ~/下载/spark-2.1.0-bin-without-hadoop.tgz -C /usr/local/cd /usr/local</span><br><span class="line">sudo <span class="built_in">mv</span> ./spark-2.1.0-bin-without-hadoop/ ./spark</span><br><span class="line">sudo <span class="built_in">chown</span> -R hadoop:hadoop ./spark          <span class="comment"># 此处的 hadoop 为你的用户名</span></span><br></pre></td></tr></table></figure>
 
 <p>安装后，还需要修改Spark的配置文件spark-env.sh</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/local/sparkcp ./conf/spark-env.sh.template ./conf/spark-env.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/local/spark</span><br><span class="line"><span class="built_in">cp</span> ./conf/spark-env.sh.template ./conf/spark-env.sh</span><br></pre></td></tr></table></figure>
 
 <p>编辑spark-env.sh文件(vim .&#x2F;conf&#x2F;spark-env.sh)，在第一行添加以下配置信息:</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export SPARK_DIST_CLASSPATH=$(/opt/homebrew/bin/hadoop classpath)</span><br></pre></td></tr></table></figure>
@@ -308,10 +308,36 @@
 <p><a class="link" target="_blank" rel="noopener" href="http://localhost:8080/">spark 本地地址<i class="fas fa-external-link-alt"></i></a></p>
 </li>
 <li><p>启动 <code>spark shell</code></p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $SPARK_HOME/bin</span><br><span class="line">./spark-shell</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">spark-shell --master &lt;master-url&gt;</span><br><span class="line"></span><br><span class="line">* local 使用一个Worker线程本地化运行SPARK(完全不并行)</span><br><span class="line">* local[*] 使用逻辑CPU个数数量的线程来本地化运行Spark</span><br><span class="line">* local[K] 使用K个Worker线程本地化运行Spark（理想情况下，K应该根据运行机器的CPU核数设定）</span><br><span class="line">* spark://HOST:PORT 连接到指定的Spark standalone master。默认端口是7077.</span><br><span class="line">* yarn-client 以客户端模式连接YARN集群。集群的位置可以在HADOOP_CONF_DIR 环境变量中找到。</span><br><span class="line">* yarn-cluster 以集群模式连接YARN集群。集群的位置可以在HADOOP_CONF_DIR 环境变量中找到。</span><br><span class="line">* mesos://HOST:PORT 连接到指定的Mesos集群。默认接口是5050。</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $SPARK_HOME/bin</span><br><span class="line">./spark-shell --master local</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Welcome to</span><br><span class="line">      ____              __</span><br><span class="line">     / __/__  ___ _____/ /__</span><br><span class="line">    _\ \/ _ \/ _ `/ __/  &#x27;_/</span><br><span class="line">   /___/ .__/\_,_/_/ /_/\_\   version 3.3.1</span><br><span class="line">      /_/</span><br><span class="line"></span><br><span class="line">Using Scala version 2.12.15 (OpenJDK 64-Bit Server VM, Java 1.8.0_292)</span><br><span class="line">Type in expressions to have them evaluated.</span><br><span class="line">Type :help for more information.</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">scala&gt;</span></span><br></pre></td></tr></table></figure></li>
 </ol>
+<h3 id="Spark-独立应用程序编程"><a href="#Spark-独立应用程序编程" class="headerlink" title="Spark 独立应用程序编程"></a>Spark 独立应用程序编程</h3><h4 id="遇到的坑"><a href="#遇到的坑" class="headerlink" title="遇到的坑"></a>遇到的坑</h4><ul>
+<li><p>路径问题：</p>
+<p>spark 应该会从 hdfs 上面查找文件。如果需要查找本地文件的话，需要使用 <code>file:</code> 开头，例如：</p>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> logFile = <span class="string">&quot;file:/Users/bytedance/resource/fyy/log.log&quot;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>找不到 class 的问题：</p>
+<ul>
+<li><p>首先包含 <code>main</code> 方法的类名要和 <code>--class</code> 输入的类名保持一致。</p>
+</li>
+<li><p>使用 idea 会报错，不知道为什么。之后还是用 vscode 吧😇</p>
+<p>如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]</span><br><span class="line">Error: Failed to load class SimpleApp.</span><br><span class="line">22/11/10 11:22:42 INFO ShutdownHookManager: Shutdown hook called</span><br><span class="line">22/11/10 11:22:42 INFO ShutdownHookManager: Deleting directory /private/var/folders/b1/0fd1b6hs7lz0fm_mh346lybm0000gn/T/spark-533682ae-17f9-4229-a3d0-a621fe441511</span><br></pre></td></tr></table></figure></li>
+</ul>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.apache.spark.sql.<span class="type">SparkSession</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">object</span> <span class="title">SimpleApp</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">main</span></span>(args: <span class="type">Array</span>[<span class="type">String</span>]) &#123;</span><br><span class="line">    <span class="keyword">val</span> logFile = <span class="string">&quot;file:/Users/bytedance/resource/fyy/log.log&quot;</span> <span class="comment">// Should be some file on your system</span></span><br><span class="line">    <span class="keyword">val</span> spark = <span class="type">SparkSession</span>.builder.appName(<span class="string">&quot;Simple Application&quot;</span>).getOrCreate()</span><br><span class="line">    <span class="keyword">val</span> logData = spark.read.textFile(logFile).cache()</span><br><span class="line">    <span class="keyword">val</span> numAs = logData.filter(line =&gt; line.contains(<span class="string">&quot;a&quot;</span>)).count()</span><br><span class="line">    <span class="keyword">val</span> numBs = logData.filter(line =&gt; line.contains(<span class="string">&quot;b&quot;</span>)).count()</span><br><span class="line">    println(<span class="string">s&quot;Lines with a: <span class="subst">$numAs</span>, Lines with b: <span class="subst">$numBs</span>&quot;</span>)</span><br><span class="line">    spark.stop()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">name := <span class="string">&quot;Simple App&quot;</span></span><br><span class="line"></span><br><span class="line">version := <span class="string">&quot;1.0&quot;</span></span><br><span class="line"></span><br><span class="line">scalaVersion := <span class="string">&quot;2.13.10&quot;</span></span><br><span class="line"></span><br><span class="line">libraryDependencies += <span class="string">&quot;org.apache.spark&quot;</span> %% <span class="string">&quot;spark-sql&quot;</span> % <span class="string">&quot;3.3.1&quot;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<p>输出：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(base) ➜  sparkapp $SPARK_HOME/bin/spark-submit \</span><br><span class="line">--class &quot;SimpleApp&quot; \</span><br><span class="line">--master local \</span><br><span class="line">./target/scala-2.13/simple-app_2.13-1.0.jar 2&amp;&gt;1 | grep &quot;Line&quot;</span><br><span class="line">Lines with a: 16, Lines with b: 15</span><br></pre></td></tr></table></figure>
+
 
         </div>
 
@@ -338,7 +364,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/tech/">#-tech</a>&nbsp;
+                        <a href="/tags/tech/">#tech</a>&nbsp;
                     </li>
                 
             </ul>
@@ -481,7 +507,7 @@
         <aside class="page-aside">
             <div class="post-toc-wrap">
     <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="nav-text">环境安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hadoop"><span class="nav-text">hadoop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spark"><span class="nav-text">spark</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85"><span class="nav-text">环境安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#hadoop"><span class="nav-text">hadoop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spark"><span class="nav-text">spark</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Spark-%E7%8B%AC%E7%AB%8B%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E7%BC%96%E7%A8%8B"><span class="nav-text">Spark 独立应用程序编程</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E7%9A%84%E5%9D%91"><span class="nav-text">遇到的坑</span></a></li></ol></li></ol></li></ol>
     </div>
 </div>
         </aside>

@@ -174,7 +174,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2022-11-09 20:20:26</span>
+        <span class="pc">2022-11-10 20:29:14</span>
     </span>
     
     
@@ -184,7 +184,7 @@
             <ul>
                 
                     <li>
-                        <a href="/tags/tech/">-tech</a>&nbsp;
+                        <a href="/tags/tech/">tech</a>&nbsp;
                     </li>
                 
             </ul>
@@ -589,12 +589,16 @@
 <li>The <a class="link" target="_blank" rel="noopener" href="http://www.scala-sbt.org/">sbt build tool<i class="fas fa-external-link-alt"></i></a></li>
 <li><a class="link" target="_blank" rel="noopener" href="http://www.scalatest.org/">ScalaTest<i class="fas fa-external-link-alt"></i></a>, a code testing framework</li>
 </ul>
-<h3 id="SBT"><a href="#SBT" class="headerlink" title="SBT"></a>SBT</h3><h4 id="Directory-structure"><a href="#Directory-structure" class="headerlink" title="Directory structure"></a>Directory structure</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">build.sbt</span><br><span class="line">project/</span><br><span class="line">src/</span><br><span class="line">-- main/</span><br><span class="line">   |-- java/</span><br><span class="line">   |-- resources/</span><br><span class="line">   |-- scala/</span><br><span class="line">|-- <span class="built_in">test</span>/</span><br><span class="line">   |-- java/</span><br><span class="line">   |-- resources/</span><br><span class="line">   |-- scala/</span><br><span class="line">target/</span><br></pre></td></tr></table></figure>
+<h3 id="SBT"><a href="#SBT" class="headerlink" title="SBT"></a>SBT</h3><p><a class="link" target="_blank" rel="noopener" href="https://codeantenna.com/a/4w7BHA15R2">SBT常用命令<i class="fas fa-external-link-alt"></i></a></p>
+<h4 id="Directory-structure"><a href="#Directory-structure" class="headerlink" title="Directory structure"></a>Directory structure</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">build.sbt</span><br><span class="line">project/</span><br><span class="line">src/</span><br><span class="line">-- main/</span><br><span class="line">   |-- java/</span><br><span class="line">   |-- resources/</span><br><span class="line">   |-- scala/</span><br><span class="line">|-- <span class="built_in">test</span>/</span><br><span class="line">   |-- java/</span><br><span class="line">   |-- resources/</span><br><span class="line">   |-- scala/</span><br><span class="line">target/</span><br></pre></td></tr></table></figure>
 
 <p> 编译项目：</p>
 <ul>
 <li>可以使用 <code>sbt run</code> 来构建项目</li>
 <li>也可以使用 <code>sbt</code> 交互式的构建项目</li>
+<li><code>sbt reload</code> 拉取镜像</li>
+<li><code>sbt package</code> 打包成 jar 包</li>
+<li></li>
 </ul>
 <h3 id="Scala-test"><a href="#Scala-test" class="headerlink" title="Scala test"></a>Scala test</h3><p>ctrl + shift + t || command + shift + t 快速创建 test</p>
 <h4 id="ScalaTest-TDD-风格"><a href="#ScalaTest-TDD-风格" class="headerlink" title="ScalaTest TDD 风格"></a>ScalaTest TDD 风格</h4><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> pizza</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.scalatest.funsuite.<span class="type">AnyFunSuite</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tests</span> <span class="keyword">extends</span> <span class="title">AnyFunSuite</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// test 1</span></span><br><span class="line">  test(<span class="string">&quot;the name is set correctly in constructor&quot;</span>) &#123;</span><br><span class="line">    assert(<span class="literal">true</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// test 2</span></span><br><span class="line">  test(<span class="string">&quot;test name&quot;</span>) &#123;</span><br><span class="line">    assert(<span class="literal">true</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -654,7 +658,7 @@
             <ul class="post-tags-box">
                 
                     <li class="tag-item">
-                        <a href="/tags/tech/">#-tech</a>&nbsp;
+                        <a href="/tags/tech/">#tech</a>&nbsp;
                     </li>
                 
             </ul>
