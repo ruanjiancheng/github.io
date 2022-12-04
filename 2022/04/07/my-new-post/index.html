@@ -174,7 +174,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2022-10-10 14:01:03</span>
+        <span class="pc">2022-12-04 19:26:53</span>
     </span>
     
     
@@ -198,12 +198,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>1.8k Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>2k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>8 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>9 Mins</span>
         </span>
     
     
@@ -396,48 +396,64 @@
 <p>docker images 是通过 dockerfile 构建生成的镜像，最终发布和运行的产品</p>
 <p>docker container 是通过 docker image 构建的容器</p>
 <h3 id="dockerfile-的指令"><a href="#dockerfile-的指令" class="headerlink" title="dockerfile 的指令"></a>dockerfile 的指令</h3><ul>
-<li>FROM<ul>
+<li><p>FROM</p>
+<ul>
 <li>这个镜像的妈妈是谁</li>
 <li>指定基础镜像</li>
 </ul>
 </li>
-<li>MAINTAINER<ul>
+<li><p>WORKDIR [dir]</p>
+<ul>
+<li>工作的根目录</li>
+</ul>
+</li>
+<li><p>MAINTAINER</p>
+<ul>
 <li>指定维护者的信息</li>
 </ul>
 </li>
-<li>RUN<ul>
+<li><p>RUN</p>
+<ul>
 <li>构建镜像的时候，需要运行的命令</li>
 </ul>
 </li>
-<li>ADD<ul>
+<li><p>ADD</p>
+<ul>
 <li>添加文件，例如部署 tomcat，则要添加 tomcat 的压缩包</li>
 </ul>
 </li>
-<li>COPY<ul>
+<li><p>COPY</p>
+<ul>
 <li>类似 ADD，将文件拷贝到镜像中</li>
 </ul>
 </li>
-<li>WORKDIR<ul>
+<li><p>WORKDIR</p>
+<ul>
 <li>镜像的工作目录</li>
 </ul>
 </li>
-<li>VOLUME<ul>
+<li><p>VOLUME</p>
+<ul>
 <li>挂在卷</li>
 </ul>
 </li>
-<li>EXPOSE<ul>
+<li><p>EXPOSE</p>
+<ul>
 <li>暴露端口</li>
 </ul>
 </li>
-<li>CMD<ul>
+<li><p>CMD</p>
+<ul>
 <li>指定这个容器启动的时候，需要运行的命令；只有最后一条会生效</li>
 </ul>
 </li>
-<li>ENTRYPOINT<ul>
+<li><p>ENTRYPOINT</p>
+<ul>
 <li>指定这个容器启动的时候，需要运行的命令；可以追加</li>
 </ul>
 </li>
-<li>ENV<ul>
+<li><p>ENV</p>
+<ul>
 <li>设置环境变量，用于设置 mysql 的密码</li>
 </ul>
 </li>
@@ -457,13 +473,13 @@
 <li><p>向 springboot 项目打包 .jar</p>
 </li>
 <li><p>编写 Dockerfile</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在 jdk11 上面构建</span></span><br><span class="line"><span class="keyword">FROM</span> openjdk:<span class="number">11</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将 .jar 文件拷贝到容器中</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> docker-0.0.1-SNAPSHOT.jar /app.jar</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行命令</span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">&quot;echo&quot;</span>, <span class="string">&quot;hello docker&quot;</span>]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行命令</span></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="language-bash"> [<span class="string">&quot;java&quot;</span>, <span class="string">&quot;-jar&quot;</span>, <span class="string">&quot;/app.jar&quot;</span>]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在 jdk11 上面构建</span></span><br><span class="line"><span class="keyword">FROM</span> openjdk:<span class="number">11</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定工作目录</span></span><br><span class="line"><span class="keyword">WORKDIR</span><span class="language-bash"> /auggie</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将 .jar 文件拷贝到容器中</span></span><br><span class="line"><span class="keyword">COPY</span><span class="language-bash"> docker-0.0.1-SNAPSHOT.jar app.jar</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 指定环境变量</span></span><br><span class="line"><span class="keyword">ENV</span> JAVA_HOME /usr/local/java</span><br><span class="line"></span><br><span class="line"><span class="comment"># 暴露容器端口，但是需要在 run 的时候，使用 -p 绑定主机端口</span></span><br><span class="line"><span class="keyword">EXPOSE</span> <span class="number">8080</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 在 build 容器的时候执行</span></span><br><span class="line"><span class="comment"># Dockerfile 的指令每执行一次都会在 docker 上新建一层。所以过多无意义的层，会造成镜像膨胀过大。</span></span><br><span class="line"><span class="keyword">RUN</span><span class="language-bash"> <span class="built_in">echo</span> <span class="string">&quot;hello world&quot;</span> \</span></span><br><span class="line"><span class="language-bash">	$$ find .</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行命令，在 docker 容器 run 的时候 运行</span></span><br><span class="line"><span class="keyword">CMD</span><span class="language-bash"> [<span class="string">&quot;echo&quot;</span>, <span class="string">&quot;hello docker&quot;</span>]</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 执行命令，类似于 CMD，但是启动容器的时候，可以指定 --entrypoint 覆盖</span></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="language-bash"> [<span class="string">&quot;java&quot;</span>, <span class="string">&quot;-jar&quot;</span>, <span class="string">&quot;/app.jar&quot;</span>]</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>将 jar 包和 Dockerfile 发送到服务器</p>
 </li>
 <li><p><code>docker build -t &quot;name&quot; .</code> 构建镜像</p>
 </li>
-<li><p><code>docker run name</code> 生成容器</p>
+<li><p><code>docker run name -p 8080:8080</code> 生成容器</p>
 </li>
 </ol>
 <h2 id="Docker-网络"><a href="#Docker-网络" class="headerlink" title="Docker 网络"></a>Docker 网络</h2>
@@ -520,6 +536,21 @@
                         </a>
                     </div>
                 
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2022/04/02/hello-world/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Hello World</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
                 
             </div>
         

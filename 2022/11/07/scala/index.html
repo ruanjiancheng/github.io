@@ -174,7 +174,7 @@
     
         <span class="article-update-date article-meta-item">
         <i class="fas fa-file-pen"></i>&nbsp;
-        <span class="pc">2022-11-10 20:29:14</span>
+        <span class="pc">2022-12-04 19:26:53</span>
     </span>
     
     
@@ -268,6 +268,7 @@
 <li>Type <code>~run</code>.</li>
 </ol>
 <p><a class="link" target="_blank" rel="noopener" href="https://scalameta.org/scalafmt/docs/installation.html">scalafmt 配置<i class="fas fa-external-link-alt"></i></a> 一点都不智能还需要配置，不如 gofmt</p>
+<p><a class="link" target="_blank" rel="noopener" href="https://stackoverflow.com/questions/29963617/how-to-call-vs-code-editor-from-terminal-command-line/33831403#33831403">vscode 配置 code<i class="fas fa-external-link-alt"></i></a></p>
 <h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ul>
 <li><code>val</code> 可变的</li>
 <li><code>var</code> 不可变</li>
@@ -457,7 +458,8 @@
 <figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> myStrArr = <span class="keyword">new</span> <span class="type">Array</span>[<span class="type">String</span>](<span class="number">3</span>) <span class="comment">//声明一个长度为3的字符串数组，每个数组元素初始化为null</span></span><br><span class="line">myStrArr(<span class="number">0</span>) = <span class="string">&quot;BigData&quot;</span> <span class="comment">//实际上，调用了伴生类Array中的update方法，执行myStrArr.update(0,&quot;BigData&quot;)</span></span><br><span class="line">myStrArr(<span class="number">1</span>) = <span class="string">&quot;Hadoop&quot;</span> <span class="comment">//实际上，调用了伴生类Array中的update方法，执行myStrArr.update(1,&quot;Hadoop&quot;)</span></span><br><span class="line">myStrArr(<span class="number">2</span>) = <span class="string">&quot;Spark&quot;</span> <span class="comment">//实际上，调用了伴生类Array中的update方法，执行myStrArr.update(2,&quot;Spark&quot;)</span></span><br></pre></td></tr></table></figure>
 
 <p>从上面可以看出，在进行元组赋值的时候，之所以没有采用Java中的方括号myStrArr[0]，而是采用圆括号的形式，myStrArr(0)，是因为存在上述的update方法的机制。</p>
-<h2 id="高级数据结构"><a href="#高级数据结构" class="headerlink" title="高级数据结构"></a>高级数据结构</h2><h3 id="ArrayBuffer"><a href="#ArrayBuffer" class="headerlink" title="ArrayBuffer"></a>ArrayBuffer</h3><p>类似于 c++ 的 vector</p>
+<h2 id="高级数据结构"><a href="#高级数据结构" class="headerlink" title="高级数据结构"></a>高级数据结构</h2><p><img src="https://img-blog.csdnimg.cn/20210415202942686.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDE2MTI1NA==,size_16,color_FFFFFF,t_70"></p>
+<h3 id="ArrayBuffer"><a href="#ArrayBuffer" class="headerlink" title="ArrayBuffer"></a>ArrayBuffer</h3><p>类似于 c++ 的 vector</p>
 <p>要使用<code>ArrayBuffer</code>你必须先导入它：</p>
 <figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scala.collection.mutable.<span class="type">ArrayBuffer</span></span><br></pre></td></tr></table></figure>
 
